@@ -1,0 +1,29 @@
+<!doctype html>
+<head>
+<body>
+<title>FOOTBALL STREAM FINDER</title>
+<h1>Hello!</h1>
+<p>Query for: {{ match_name }}</p>
+        <h2>Results</h2>
+        <p>Match Name: {{ lista_title[0] }}</p>
+        <p>Reddit URLs:</p>
+        <ul>
+        {% for i in lista_url %}
+           <p><a href="{{ ''.join(['http://', i]) }}">{{ i }}</a></p>
+        {% endfor %}
+        </ul>
+        <p>Stream links:</p>
+        <ul>
+        {% for i in lista_streamlinks %}
+           <p><a href="{{ ''.join(['http://', i]) }}">{{ i }}</a></p>
+        {% endfor %}
+        </ul>
+        <h3>Check match:</h3>
+        <form action="/" method="POST">
+              <input type="text" name="match_name">
+              <input type="submit" name="submitform" value="Do some magic!">
+        </form>
+        <p>Data provided by Reddit!</p>
+<footer><a href="http://github.com/AmarKalabic">GitHub</a> | <a href="http://amarkalabic.me">Author's Website (Flask version, see GitHub for other versions)</a> </footer>
+</body>
+</head>
